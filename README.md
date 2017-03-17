@@ -6,7 +6,7 @@ Sample project to create a crud with BackEnd in spring service and FrontEnd in A
 
 ## Usage
 ### Requirements
-* [Spring Tools Suit](http://spring.io/) (for web service in Java)
+* [Spring Tools Suit](http://spring.io/) (for run web service in Java)
 * [NodeJS](http://nodejs.org/) (with [NPM](https://www.npmjs.org/))
 * [Bower](http://bower.io)
 * [Gulp](http://gulpjs.com)
