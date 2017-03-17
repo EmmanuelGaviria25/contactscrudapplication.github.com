@@ -1,6 +1,6 @@
 # Application Angularjs and Spring Service
 ## ContactsCrudApplication
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/egav-dev-angular/Lobby)
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/egav-dev-angular/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Sample project to create a crud with BackEnd in spring service and FrontEnd in Angularjs, gulp, and template RDash with my modifications
 
