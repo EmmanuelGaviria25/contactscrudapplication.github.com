@@ -1,0 +1,36 @@
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12" ng-controller="contactsCtrl">
+		<button ng-click="create()" class="btn btn-info btn-sm pull-right col-sm-1 col-xs-4" style="margin: 10px">Crear <i class="fa fa-plus"></i></button>
+		<div class="panel panel-default">
+  			<div class="panel-heading row">
+				<label style="margin-top: 5px;"><i class="fa fa-users"></i> Contactos</label><br><input type="text" placeholder="Buscar!" ng-model="test" class="form-control input-sm" style=" margin-bottom: 2px;" />
+			</div>
+  			<div class="panel-body">
+				<rd-loading ng-show="loading"></rd-loading>
+				<div class="table-responsive" ng-hide="loading">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th class="text-center">Nombre</th>
+								<th class="text-center">Correo electrónico</th>
+								<th class="text-center">Dirección</th>
+								<th class="text-center">Telefono</th>
+								<th class="text-center" colspan="2">Acciones</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="contact in contacts | filter : test">
+								<td class="text-center">{{contact.name}}</td>
+								<td class="text-center">{{contact.email}}</td>
+								<td class="text-center">{{contact.address}}</td>
+								<td class="text-center">{{contact.telephone}}</td>
+								<td class="text-center"><button class="btn btn-success btn-sm" ng-click="edit(contact)">editar</button></td>
+								<td class="text-center"><button class="btn btn-warning btn-sm" ng-click="delete(contact)">borrar</button></td>
+							</tr>
+						</tbody>
+					</table>
+        		</div>
+        	</div>
+        </div>
+	</div> 
+</div>		
