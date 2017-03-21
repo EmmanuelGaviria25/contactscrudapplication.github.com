@@ -12,7 +12,7 @@ Sample project to create a crud with BackEnd in spring service and FrontEnd in A
 * [Gulp](http://gulpjs.com)
 
 ### Installation
-1. Clone the repository: `git clone https://github.com/EmmanuelGav/ContactsCrudApplication.git`
+1. Download ZIP the repository: [`master.zip`](https://github.com/EmmanuelGav/ContactsCrudApplication/archive/master.zip)
 2. Install the NodeJS dependencies: `npm install`.
 3. Install the Bower dependencies: `bower install`.
 4. Run the gulp build task: `gulp build`.
