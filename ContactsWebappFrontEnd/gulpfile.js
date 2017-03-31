@@ -8,8 +8,8 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     less = require('gulp-less'),
     rename = require('gulp-rename'),
-    minifyHTML = require('gulp-htmlmin');
-    war = require('gulp-war');
+    minifyHTML = require('gulp-htmlmin'),
+    war = require('gulp-war'),
     zip = require('gulp-zip')
 
 var paths = {

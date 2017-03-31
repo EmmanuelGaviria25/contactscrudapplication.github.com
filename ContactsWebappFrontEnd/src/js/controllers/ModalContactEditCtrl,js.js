@@ -5,7 +5,6 @@ angular.module('RDash')
 		
 		$scope.loadingCreation = false;
 		$scope.contact = contact;
-		console.log(contact)
 		$scope.formType = "edición"
 		$scope.buttomType = "Editar";
 
@@ -30,7 +29,7 @@ angular.module('RDash')
 		}
 
 		$scope.cancel = function() {
-			$scope.contact = {};
-			$uibModalInstance.dismiss();
+			$scope.contact = contact;
+			$uibModalInstance.close();
 		}
 	}

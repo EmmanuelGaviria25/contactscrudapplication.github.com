@@ -3,11 +3,18 @@ angular.module('RDash')
 
 	function contactsCtrl($scope, $uibModal, contactService) {
 
+		$scope.contactsEmpty = true;
 		$scope.loading = true;
 
 		function loadContactSuccess(contacts) {
-			$scope.contacts = contacts;
 			$scope.loading = false;
+			if (contacts <= 1) {
+				$scope.contactsEmpty = true;
+    			console.log('entro!')
+				return;
+			}
+			$scope.contacts = contacts;
+			$scope.contactsEmpty = false;
 		}
 
 		function loadContactFailure(response) {
@@ -35,6 +42,22 @@ angular.module('RDash')
 	    	});
 
 	    	modalInstance.result.then(function(response) {
+	    		data = {
+	    			name: response.name,
+	    			title: "Has eliminado satisfactoriamente este contacto "
+	    		}
+				$uibModal.open({
+					templateUrl: 'templates/components/AlertDialogContactDeleted.html',
+					backdrop: true,
+			 		keyboard: true,
+			 		backdropClick: true,
+					animation: true,
+					controller: 'modalAlertDialogController',
+					controllerAs: '$ctrl',
+					resolve: {
+						contact: data
+					}
+				});
 				contactService
 					.getAllContacts()
 					.then(loadContactSuccess, loadContactFailure);
@@ -92,6 +115,12 @@ angular.module('RDash')
 	    	});
 
 	    	modalInstance.result.then(function(response) {
+	    		if (!response) {
+					contactService
+						.getAllContacts()
+						.then(loadContactSuccess, loadContactFailure);
+					return;
+	    		}
 	    		data = {
 	    			name: response.name,
 	    			title: "Has editado satisfactoriamente al contacto "
